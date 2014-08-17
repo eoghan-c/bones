@@ -10,25 +10,26 @@
 
 							<header class="article-header">
 
-								<h1><?php _e( 'Epic 404 - Article Not Found', 'bonestheme' ); ?></h1>
+								<h1><?php _e( 'Page not found', 'bonestheme' ); ?></h1>
 
 							</header>
 
 							<section class="entry-content">
 
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
-
-							</section>
-
-							<section class="search">
-
-									<p><?php get_search_form(); ?></p>
-
+								<p><?php _e( 'The page you requested could not be found, please click below to return to the homepage:', 'bonestheme' ); ?></p>
+								<ul>
+									<li>
+										<a href="<?php echo home_url( '/' ); ?>">
+											<?php echo esc_url( home_url( '/' ) ); ?>
+										</a>
+									</li>
+								</ul>
+								
 							</section>
 
 							<footer class="article-footer">
 
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
+									<p></p>
 
 							</footer>
 
