@@ -1,3 +1,7 @@
+<?php
+	$opt_engine_version  = opt_get_engine_version ();
+	$opt_content_version = opt_get_content_version ();
+?>
 			<footer class="footer" role="contentinfo">
 
 				<div id="inner-footer" class="wrap cf">
@@ -18,7 +22,15 @@
 						)); ?>
 					</nav>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+					<p>
+						<span class="source-org copyright">&copy; 2009-<?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></span>
+						<?php if ( !empty($opt_content_version) ) : ?>
+						|
+						Content version <?php echo($opt_content_version); ?>
+						<?php endif ?>
+						|
+						Engine version <?php echo($opt_engine_version); ?>
+					</p>
 
 				</div>
 

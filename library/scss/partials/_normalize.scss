@@ -164,10 +164,16 @@ hr {
 */
 
 p {
-  -webkit-hyphens: auto;
-  -epub-hyphens:   auto;
-  -moz-hyphens:    auto;
-  hyphens:         auto;
+  /* EC Changed
+   * Originally set to 'auto' commented out to remove hyphenation, and found IE was cutting words across lines.
+   * Added '-ms-hyphens'
+   * Tried setting to 'none'
+   */
+  -webkit-hyphens: none;
+  -epub-hyphens:   none;
+  -moz-hyphens:    none;
+  -ms-hyphens:     none;
+  hyphens:         none;
 
 }
 
@@ -251,12 +257,27 @@ dl,
 menu,
 ol,
 ul {
-    margin: 1em 0;
+    margin: 0.5em 0 1em;
 }
 
 dd {
     margin: 0;
 }
+
+/* EC Reduce margin below p 
+ * Be careful of situations where the p is floated with 'alignleft' or 'alignright'
+ *   this can have unintended consequences, bringing the flowing elements up too
+ *   close to the element above the p
+ *   (e.g. Animal Management: What to Expect Screen 6 of 11)
+ */
+
+p + dl,
+p + menu,
+p + ol,
+p + ul {
+    margin-top: -0.5em;
+}
+
 
 /*
  * Addresses paddings set differently in IE6/7.
@@ -268,9 +289,10 @@ menu {
 
 ol,
 ul {
-    padding: 0;
-    list-style-type: none;
-}
+    /* EC These seemed to mess up display of bullet points in all browsers ... */
+    /*padding: 0;
+    list-style-type: none;*/
+  }
 
 /*
  * Corrects list images handled incorrectly in IE7.

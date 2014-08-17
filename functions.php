@@ -117,7 +117,7 @@ new image size.
 
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
-	register_sidebar(array(
+	/*register_sidebar(array(
 		'id' => 'sidebar1',
 		'name' => __( 'Sidebar 1', 'bonestheme' ),
 		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
@@ -125,7 +125,7 @@ function bones_register_sidebars() {
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
-	));
+	));*/
 
 	/*
 	to add more sidebars or widgetized areas, just copy
@@ -208,6 +208,8 @@ function bones_fonts() {
 
 add_action('wp_print_styles', 'bones_fonts');
 
+/* EC Code for the Online Placement Tools */
+require_once( "functions-op_tools.php" );
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

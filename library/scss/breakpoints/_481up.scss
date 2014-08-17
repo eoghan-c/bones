@@ -115,3 +115,42 @@ do they need tweaking?
 	}
 } /* end .footer-links */
 
+/*********************
+STYLES FOR THE ONLINE PLACEMENT TOOL
+*********************/
+
+a.rdsvs-opt-nav-button {
+	padding: 10px;
+	margin-bottom: 15px;
+	width: 12em;
+}
+
+span.rdsvs-toc-button a {
+	height: 8em;
+	padding-top: 2em;
+
+	span.rdsvs-start-here-label {
+		color: $button-start-here-label;
+	}
+}
+
+span.hide-on-small-screens {
+	display: inherit;
+}
+
+span.show-on-small-screens {
+	display: none;
+}
+
+/* Styles for the badge certificate */
+div.op-tool-badge-certificate {
+	width: 90%;
+
+	.version-info {
+		font-size: 1em;
+		-ms-word-break: keep-all; /* EC changed from 'break-all' */
+		-ms-word-wrap: normal;    /* EC changed from 'berak-word' */
+		word-break: normal;   /* EC changed from 'break-word' */
+		word-break: normal;    /* EC changed from 'break-word' */
+	}
+}

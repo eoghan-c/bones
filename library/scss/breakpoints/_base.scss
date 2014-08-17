@@ -121,13 +121,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
-	line-height: 1.333em;
+	font-size: 1.75em;
+	line-height: 1.3em;
 }
 
 h2, .h2 {
-	font-size: 1.75em;
-	line-height: 1.4em;
+	font-size: 1.5em;
+	line-height: 1.2em;
 	margin-bottom: 0.375em;
 }
 
@@ -154,9 +154,11 @@ HEADER STYLES
 .header {
 	background-color: $black;
 }
-
+	.h1 {
+		font-size: small;
+	}
 	#logo {
-		margin: 0.75em 0;
+		margin: 5px 0;
 
 		a {
 			color: $white;
@@ -262,7 +264,7 @@ POSTS & CONTENT STYLES
 
 			header {
 				border-bottom: 1px solid $light-gray;
-				padding: 1.5em;
+				padding: 0.75em;
 			}
 
 			footer {
@@ -322,8 +324,15 @@ POSTS & CONTENT STYLES
 
 			ul, ol {
 
-				li {}
+				li {
+					margin-bottom: 0.5em;
+				}
 
+			}
+
+			/* EC Where we have a list with a left-floated image, our lists weren't getting indented */
+			ul.after-left-float-element, ol.after-left-float-element {
+				display: table; /* EC Added to fix problem with lists next to a left-floated image */
 			}
 
 			ul {
@@ -370,8 +379,8 @@ POSTS & CONTENT STYLES
 			}
 
 			th {
-				background-color: $light-gray;
-				border-bottom: 1px solid $gray;
+				/*background-color: $light-gray;*/
+				border-bottom: 5px solid $gray;
 				border-right: 1px solid $gray;
 
 				&:last-child {
@@ -379,15 +388,24 @@ POSTS & CONTENT STYLES
 				}
 			}
 
+			/* EC Make speech bubbles? http://ilikepixels.co.uk/drop/bubbler/ */
 			blockquote {
-				margin: 0 0 1.5em 0.75em;
-				padding: 0 0 0 0.75em;
-				border-left: 3px solid $blue;
+				margin: 0 0.25em 0 0.25em;
+				padding: 0.75em 0.75em 0 0.75em;
+				border: $blockquote-border-size solid $blockquote-border-color;
+				border-radius: 15px;
 				font-style: italic;
-				color: $meta-gray;
+				color: $blockquote-text-color;
 
 				&:before {}
 
+			}
+
+			.inlinequote {
+				margin: 0 0.25em 0 0.25em;
+				padding: 0.75em;
+				/*font-style: italic;*/
+				border: $inlinequote-border-size solid $inlinequote-border-color;
 			}
 
 			dl {}
@@ -485,6 +503,25 @@ POSTS & CONTENT STYLES
 	// the tag output
 	.tags {
 		margin: 0;
+	}
+
+	/* EC use aligns for pages too */
+	article.page, article.op_tool_type {
+		.rdsvs-opt-previous {
+			margin-right: 1.5em;
+			display: inline;
+			float: left;
+		}
+		.rdsvs-opt-next, a.rdsvs-sidr-right {
+			margin-left: 1.5em;
+			display: inline;
+			float: right;
+		}
+		.rdsvs-opt-frame-progress, .rdsvs-print-certificate, .rdsvs_opt_user_details_form {
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
 	}
 
 /******************************************************************
@@ -886,3 +923,220 @@ FOOTER STYLES
 
 
 	.copyright {}
+
+/*********************
+STYLES FOR THE ONLINE PLACEMENT TOOL
+*********************/
+
+/* Centre all videos on the page */
+div.wp-video {
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+a.rdsvs-opt-nav-button {
+	display: block;
+	padding: 10px;
+	margin-bottom: 15px;
+	background-color: $button-background-color;
+	/*border: 5px solid $button-border-color;*/
+	border-radius: 15px;
+	color: $button-label-color;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	&:link, &:visited {
+		color: $button-label-color;
+	}
+	&:hover {
+		background-color: $button-background-color-hover;
+	}
+	&:active {
+		background-color: $button-background-color-active;
+	}
+}
+
+a.rdsvs-opt-nav-button-skip {
+	background-color: $button-skip-background-color;
+	/*border-color: $button-skip-border-color;*/
+	color: $button-skip-label-color;
+	font-weight: normal;
+	&:link, &:visited {
+		color: $button-skip-label-color;
+	}
+	&:hover {
+		background-color: $button-skip-background-color-hover;
+	}
+	&:active {
+		background-color: $button-skip-background-color-active;
+	}
+}
+
+.rdsvs-current-section a {
+	background-color: $button-curr-section-background-color;
+	/*border-color: $button-skip-border-color;*/
+	color: $button-curr-section-label-color;
+	font-weight: normal;
+	&:link, &:visited {
+		color: $button-curr-section-label-color;
+	}
+	&:hover {
+		background-color: $button-curr-section-background-color-hover;
+	}	
+	&:active {
+		background-color: $button-curr-section-background-color-active;
+	}	
+}
+
+/* Place a green tick in sections that have been viewed */
+.rdsvs-section-viewed a {
+	/*border: 5px solid $button-section-viewed-border-color;*/
+	background: $button-background-color url(../images/green_tick_small.png) no-repeat top right;
+}
+.rdsvs-current-section.rdsvs-section-viewed a {
+	background: $button-curr-section-background-color url(../images/green_tick_small.png) no-repeat top right;
+}
+
+img.rdsvs-opt-nav-button-tick {
+	position: absolute;
+}
+
+span.rdsvs-toc-button a {
+	width: 20%;
+	height: 3em;
+	margin-right: 5%;
+	float: left;
+	display: block;
+
+	span.rdsvs-start-here-label {
+		color: $button-start-here-label;
+	}
+}
+
+span.hide-on-small-screens {
+	display: none;
+}
+
+span.show-on-small-screens {
+	display: inherit;
+}
+
+
+/*span.rdsvs-toc-button a span {
+	vertical-align: middle;
+}*/
+
+div.rdsvs-sections-report {
+	border: 3px solid $button-background-color;
+	padding-top: 15px;
+	margin: 0 50px 20px 50px;
+
+	p {
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+}
+
+div.rdsvs-open-badge-award {
+	padding-top: 1em;
+	padding-bottom: 5em;
+}
+
+.user_note {
+	font-size: 0.8em;
+}
+
+/* Fix video non-resizing problem */
+/*.hentry .mejs-container {
+	margin: 12px 0 18px;
+}*/
+
+/* Styles for the badge certificate */
+div.op-tool-badge-certificate {
+	text-align: center;
+	margin: 2em auto;
+	padding: 0.5em 2em;
+	border: 10px double black;
+	border-radius: 50px;
+	background-color: #EEE;
+
+	.certificate-title {
+		font-size: 2em;
+		font-style: bold;
+		margin-bottom: 1em;
+	}
+
+	.intro-text, .explanation-text {
+		font-size: 1.2em;
+		margin-bottom: 1em;
+	}
+
+	.user-name {
+		font-size: 2em;
+		font-style: bold;
+		margin-bottom: 1em;
+	}
+
+	.award-date {
+		font-size: 1.8em;
+		margin-bottom: 1em;
+	}
+
+	.award-time {
+		font-size: 1em;
+	}
+
+	.time-taken {
+		font-size: 1.2em;
+		margin-bottom: 1em;
+	}
+
+	.version-info {
+		font-size: 1em;
+		-ms-word-break: break-all; /* EC changed from 'break-all' */
+		-ms-word-wrap: break-word;    /* EC changed from 'break-word' */
+		word-break: break-word;   /* EC changed from 'break-word' */
+		word-break: break-word;    /* EC changed from 'break-word' */
+	}
+}
+
+@media print {
+	div.op-tool-badge-certificate {
+		width: 90%;
+	}
+
+	div.rdsvs-open-badge-award {
+		padding-bottom: 0;
+
+		h2 {
+			display: none;
+		}
+	}
+
+	body.single-award {
+		header {
+			display: none;
+		}
+
+		footer {
+			display: none;
+		}
+	}
+}
+
+/* Styles for printing */
+@media print {
+	div.wp-video {
+		display: none;
+	}
+	
+	.page-break-on-print {
+		page-break-after: always;
+	}
+
+	.no-print {
+		display: none;
+	}
+}

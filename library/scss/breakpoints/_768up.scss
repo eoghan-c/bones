@@ -142,7 +142,7 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	/*margin-top: 2.2em;*/
 }
 
 	.widgettitle {
@@ -152,7 +152,8 @@ SIDEBARS & ASIDES
 
 	.widget {
 		padding: 0 10px;
-		margin: 2.2em 0;
+		/*margin: 2.2em 0;*/
+		margin: 0 0 2.2em 0;
 
 		ul {
 			li {
@@ -285,3 +286,11 @@ mobile. Make sure to double check these!
 	}
 } /* end .footer-links */
 
+/*********************
+STYLES FOR THE ONLINE PLACEMENT TOOL
+*********************/
+
+/* Styles for the badge certificate */
+div.op-tool-badge-certificate {
+	width: 85%;
+}

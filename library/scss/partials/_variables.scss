@@ -27,7 +27,7 @@ $white:             #fff;
 
 $light-gray:        #f8f9fa;
 $gray:              #eaedf2;
-$text-color:        #5c6b80;
+$text-color:        #333;
 $meta-gray:         #9fa6b4;
 
 $tan:               #eceee5;
@@ -36,8 +36,9 @@ $green:             #7dd667;
 
 $bones-pink:        #f01d4f;
 $blue:              #2980b9;
+$op-tools-blue:		#1260eb;
 
-$link-color:        $bones-pink;
+$link-color:        $op-tools-blue;
 $link-hover:        darken($link-color, 9%);
 
 $border-color:      #ccc;
@@ -49,3 +50,43 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
+
+/*********************
+VARIABLES FOR THE ONLINE PLACEMENT TOOL
+*********************/
+
+/* Normal button styling */
+$button-background-color: #333;
+$button-background-color-hover: #666;
+$button-background-color-active: #333;
+/*$button-border-color: #000;*/
+$button-label-color: #FFF;
+
+/* 'Skip' button styling */
+$button-skip-background-color: #DDD;
+$button-skip-background-color-hover: #EEE;
+$button-skip-background-color-active: #DDD;
+/*$button-skip-border-color: #CCC;*/
+$button-skip-label-color: #666;
+
+/* 'Current section' button styling */
+$button-curr-section-background-color: #A3A300;
+$button-curr-section-background-color-hover: #B8B800;
+$button-curr-section-background-color-active: #A3A300;
+$button-curr-section-label-color: #FFF;
+
+/* 'Section viewed' button styling */
+$button-section-viewed-border-color: #33CC33;
+
+/* Styling for the 'Start Here' message on the table of contents */
+$button-start-here-label: #33CC33;
+
+/* Blockquote styling */
+$blockquote-border-size: 10px;
+$blockquote-border-color: #666;
+$blockquote-text-color: #000;
+
+/* Inlinequote styling */
+$inlinequote-border-size: 3px;
+$inlinequote-border-color: #666;
+
