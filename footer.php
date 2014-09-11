@@ -24,12 +24,12 @@
 
 					<p>
 						<span class="source-org copyright">&copy; 2009-<?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></span>
-						<?php if ( !empty($opt_content_version) ) : ?>
-						|
-						Content version <?php echo($opt_content_version); ?>
+						<?php if ( !empty($opt_content_version) ) : ?> 
+						| 
+						Content version <?php echo($opt_content_version); ?> 
 						<?php endif ?>
-						|
-						Engine version <?php echo($opt_engine_version); ?>
+						| 
+						Engine version <?php echo($opt_engine_version); ?> 
 					</p>
 
 				</div>
