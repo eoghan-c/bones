@@ -1053,6 +1053,14 @@ div.rdsvs-open-badge-award {
 	margin: 12px 0 18px;
 }*/
 
+/* Reduce text size of document notes 
+ * so it can fit on pages when printed out
+ */
+body.post-type-archive-op_tool_type {
+	font-size: 75%;
+}
+
+
 /* Styles for the badge certificate */
 div.op-tool-badge-certificate {
 	text-align: center;
