@@ -1028,8 +1028,8 @@ span.show-on-small-screens {
 }*/
 
 div.rdsvs-sections-report {
-	border: 3px solid $button-background-color;
-	padding-top: 15px;
+	border: 3px solid $completed-report-background-color;
+	padding: 15px 15px 0 15px;
 	margin: 0 50px 20px 50px;
 
 	p {
@@ -1037,6 +1037,10 @@ div.rdsvs-sections-report {
 		margin-left: auto;
 		text-align: center;
 	}
+}
+
+div.rdsvs-sections-report.uncompleted {
+	border: 5px solid $uncompleted-report-background-color;
 }
 
 div.rdsvs-open-badge-award {
